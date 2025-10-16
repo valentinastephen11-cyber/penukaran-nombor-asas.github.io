@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penukar Nombor Asas</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Laman web interaktif untuk menukar nombor antara asas 2, 8, 10, dan 16. Penjelasan dan contoh turut disediakan.">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Penukar Nombor Asas</h1>
+            <nav>
+                <ul>
+                    <li><a href="#utama">Utama</a></li>
+                    <li><a href="#penukar">Penukar Nombor</a></li>
+                    <li><a href="#asas">Asas Nombor</a></li>
+                    <li><a href="#penjelasan">Penjelasan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="utama">
+            <h2>Selamat Datang!</h2>
+            <p>Laman ini membantu anda menukar nombor antara pelbagai asas dengan mudah dan menyediakan penjelasan serta contoh yang jelas.</p>
+        </section>
+
+        <section id="penukar">
+            <h2>Penukar Nombor</h2>
+            <p>Masukkan nombor, pilih asas asal dan sasaran, kemudian klik <strong>Tukar</strong>.</p>
+            <form id="borangPenukar">
+                <label for="nombor">Nombor:</label>
+                <input type="text" id="nombor" name="nombor" placeholder="Masukkan nombor">
+
+                <label for="asasAsal">Asas Asal:</label>
+                <select id="asasAsal" name="asasAsal">
+                    <option value="2">Perduaan (2)</option>
+                    <option value="8">Perlapanan (8)</option>
+                    <option value="10">Perpuluhan (10)</option>
+                    <option value="16">Perenambelasan (16)</option>
+                </select>
+
+                <label for="asasSasaran">Asas Sasaran:</label>
+                <select id="asasSasaran" name="asasSasaran">
+                    <option value="2">Perduaan (2)</option>
+                    <option value="8">Perlapanan (8)</option>
+                    <option value="10">Perpuluhan (10)</option>
+                    <option value="16">Perenambelasan (16)</option>
+                </select>
+
+                <button type="button" onclick="tukarNombor()">Tukar</button>
+            </form>
+            <div id="keputusan">
+                <p>Hasil: <span id="hasil"></span></p>
+            </div>
+        </section>
+
+        <section id="asas">
+            <h2>Jenis Asas Nombor</h2>
+            <ul>
+                <li><strong>Perduaan (2):</strong> Digit 0 dan 1. Asas sistem komputer.</li>
+                <li><strong>Perlapanan (8):</strong> Digit 0 hingga 7. Digunakan dalam pengaturcaraan.</li>
+                <li><strong>Perpuluhan (10):</strong> Sistem nombor harian.</li>
+                <li><strong>Perenambelasan (16):</strong> Digit 0-9 dan A-F. Untuk alamat memori dan kod warna.</li>
+            </ul>
+        </section>
+
+        <section id="penjelasan">
+            <h2>Penjelasan & Contoh</h2>
+            <h3>Cara Menukar Nombor</h3>
+            <p>Beberapa contoh penukaran asas:</p>
+            <div class="penjelasan-list">
+                <div>
+                    <h4>Perduaan ke Perpuluhan</h4>
+                    <p>Darab setiap digit dengan 2<sup>n</sup>, n dari kanan (0).</p>
+                    <small>Contoh: 1011<sub>2</sub> = (1×8)+(0×4)+(1×2)+(1×1) = 11<sub>10</sub></small>
+                </div>
+                <div>
+                    <h4>Perpuluhan ke Perduaan</h4>
+                    <p>Bahagi nombor dengan 2, ambil baki, baca dari bawah ke atas.</p>
+                    <small>Contoh: 13<sub>10</sub> → 1101<sub>2</sub></small>
+                </div>
+                <div>
+                    <h4>Perenambelasan ke Perpuluhan</h4>
+                    <p>Darab setiap digit dengan 16<sup>n</sup>. (A=10, B=11, ...)</p>
+                    <small>Contoh: 2A<sub>16</sub> = 2×16 + 10×1 = 42<sub>10</sub></small>
+                </div>
+                <div>
+                    <h4>Perpuluhan ke Perenambelasan</h4>
+                    <p>Bahagi nombor dengan 16, tukar baki kepada huruf jika >9, baca dari bawah ke atas.</p>
+                    <small>Contoh: 45<sub>10</sub> → 2D<sub>16</sub></small>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Valenzz. Semua hak cipta terpelihara.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
